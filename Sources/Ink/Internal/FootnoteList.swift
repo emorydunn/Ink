@@ -29,7 +29,12 @@ internal struct FootnoteList: Fragment {
             html.append(footnoteDeclaration.html(usingReferences: references,
                                                  modifiers: modifiers))
         }
-        return "<ol>\(body)</ol>"
+        return """
+        <div class="footnotes">
+            <hr/>
+            <ol>\(body)</ol>
+        </div>
+        """
     }
 
     func plainText() -> String {
